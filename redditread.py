@@ -39,7 +39,7 @@ def get_matches(html_doc):
     else:
         orig_post_text = orig_post.find('p', class_='title').a.get('href')
 
-    script_path = os.path.abspath(__file__)
+    script_path = os.path.realpath(__file__)
     script_dir = os.path.split(script_path)[0]
     html_folder_path = os.path.join(script_dir, 'html')
     if (not os.path.exists(html_folder_path)):
