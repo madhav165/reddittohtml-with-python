@@ -20,10 +20,10 @@ def get_html():
     #ua = UserAgent()
     #ua.chrome
     req = urllib.request.Request(URL,
-                                headers={'User-Agent': 'Mozilla/5.0 \
-                                         (X11; Linux x86_64) \
-                                          AppleWebKit/537.36 (KHTML, like Gecko) \
-                                          Chrome/53.0.2774.3 Safari/537.36'})
+                                headers={'User-Agent': '''Mozilla/5.0 
+                                         (X11; Linux x86_64) 
+                                          AppleWebKit/537.36 (KHTML, like Gecko) 
+                                          Chrome/53.0.2774.3 Safari/537.36'''})
     with contextlib.closing(urllib.request.urlopen(req)) as f:
         return f.read().decode('utf-8');
 
@@ -48,7 +48,7 @@ def get_matches(html_doc):
     abs_file_path = os.path.join(script_dir, rel_path)
     f = open(abs_file_path ,'w')
     f.write('<!doctype html><html><body>')
-    f.write('<h2>'+orig_title+'</h1>')
+    f.write('<h1>'+orig_title+'</h1>')
     f.write('<p><b>'+orig_poster+'</b></p>')
     f.write('<p>'+str(orig_post_text)+'</p>')
 
